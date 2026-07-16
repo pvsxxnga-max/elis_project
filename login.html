@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>e-Lending Information System</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"TH Sarabun New",sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+
+    width:420px;
+    background:white;
+    border-radius:12px;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    text-align:center;
+    font-size:42px;
+    color:#0d47a1;
+    margin-bottom:10px;
+
+}
+
+h2{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+label{
+
+    font-size:24px;
+
+}
+
+input{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:24px;
+
+}
+
+button{
+
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:24px;
+    margin-top:12px;
+
+}
+
+.login{
+
+    background:#1565c0;
+    color:white;
+
+}
+
+.register{
+
+    background:#43a047;
+    color:white;
+
+}
+
+.staff{
+
+    background:#616161;
+    color:white;
+
+}
+
+.footer{
+
+    margin-top:20px;
+    text-align:center;
+    color:#777;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<h2>e-Lending Information System</h2>
+
+<div class="input-group">
+
+<label>ชื่อผู้ใช้</label>
+
+<input type="text" id="username">
+
+</div>
+
+<div class="input-group">
+
+<label>รหัสผ่าน</label>
+
+<input type="password" id="password">
+
+</div>
+
+<button class="login" onclick="login()">
+<i class="fa-solid fa-right-to-bracket"></i>
+เข้าสู่ระบบ
+</button>
+
+<button class="register" onclick="register()">
+<i class="fa-brands fa-google"></i>
+ลงทะเบียน
+</button>
+
+<button class="staff" onclick="staff()">
+<i class="fa-solid fa-user-tie"></i>
+สำหรับเจ้าหน้าที่
+</button>
+
+<div class="footer">
+
+Version 1.0
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+Swal.fire({
+
+icon:'success',
+title:'เข้าสู่ระบบ',
+text:'เชื่อมต่อ Backend ภายหลัง'
+
+});
+
+}
+
+function register(){
+
+window.location='register.html';
+
+}
+
+function staff(){
+
+window.location='officer-login.html';
+
+}
+
+</script>
+
+</body>
+
+</html>
