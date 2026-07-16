@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ลงทะเบียน | e-LIS</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"TH Sarabun New",sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+
+    width:430px;
+    background:#fff;
+    border-radius:12px;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    text-align:center;
+    font-size:48px;
+    color:#0d47a1;
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    text-align:center;
+    margin-bottom:10px;
+
+}
+
+p{
+
+    text-align:center;
+    color:#666;
+    font-size:24px;
+    margin-bottom:25px;
+
+}
+
+button{
+
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:24px;
+
+}
+
+.google{
+
+    background:#ffffff;
+    border:1px solid #ccc;
+
+}
+
+.google:hover{
+
+    background:#f5f5f5;
+
+}
+
+.back{
+
+    margin-top:15px;
+    background:#1565c0;
+    color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<h2>ลงทะเบียนผู้ใช้งาน</h2>
+
+<p>เข้าสู่ระบบด้วยบัญชี Google</p>
+
+<button class="google" onclick="googleLogin()">
+<i class="fa-brands fa-google"></i>
+เข้าสู่ระบบด้วย Google
+</button>
+
+<button class="back" onclick="location.href='login.html'">
+กลับหน้า Login
+</button>
+
+</div>
+
+<script>
+
+function googleLogin(){
+
+Swal.fire({
+
+icon:'success',
+title:'เข้าสู่ระบบสำเร็จ',
+text:'บัญชี Google ถูกเชื่อมเรียบร้อย'
+
+}).then(()=>{
+
+Swal.fire({
+
+title:'ต้องการดำเนินการต่ออย่างไร',
+
+showDenyButton:true,
+
+confirmButtonText:'กรอกข้อมูลผู้กู้',
+
+denyButtonText:'ข้ามก่อน'
+
+}).then((result)=>{
+
+if(result.isConfirmed){
+
+window.location='profile.html';
+
+}else{
+
+window.location='borrower-dashboard.html';
+
+}
+
+});
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
