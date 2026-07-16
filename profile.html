@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ข้อมูลผู้กู้ | e-LIS</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"TH Sarabun New",sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    padding:30px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+h2{
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+.row{
+    display:flex;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+.col{
+    flex:1;
+}
+
+label{
+    display:block;
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+input,select,textarea{
+
+    width:100%;
+    padding:10px;
+    font-size:22px;
+    border:1px solid #ccc;
+    border-radius:8px;
+
+}
+
+textarea{
+    resize:none;
+    height:100px;
+}
+
+button{
+
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:24px;
+
+}
+
+.save{
+
+    background:#1565c0;
+    color:white;
+
+}
+
+.skip{
+
+    background:#9e9e9e;
+    color:white;
+    margin-left:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2><i class="fa-solid fa-address-card"></i> ข้อมูลผู้กู้</h2>
+
+<div class="row">
+
+<div class="col">
+
+<label>คำนำหน้า</label>
+
+<select>
+<option>นาย</option>
+<option>นาง</option>
+<option>นางสาว</option>
+</select>
+
+</div>
+
+<div class="col">
+
+<label>เลขบัตรประชาชน</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col">
+<label>ชื่อ</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>นามสกุล</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col">
+<label>เบอร์โทรศัพท์</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>อีเมล</label>
+<input type="email">
+</div>
+
+</div>
+
+<label>ที่อยู่</label>
+
+<textarea></textarea>
+
+<div class="row">
+
+<div class="col">
+<label>จังหวัด</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>อำเภอ</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>ตำบล</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col">
+<label>รหัสไปรษณีย์</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>อาชีพ</label>
+<input type="text">
+</div>
+
+<div class="col">
+<label>รายได้ต่อเดือน</label>
+<input type="number">
+</div>
+
+</div>
+
+<button class="save" onclick="saveProfile()">
+<i class="fa-solid fa-floppy-disk"></i>
+บันทึกข้อมูล
+</button>
+
+<button class="skip" onclick="skipProfile()">
+ข้าม
+</button>
+
+</div>
+
+<script>
+
+function saveProfile(){
+
+Swal.fire({
+
+icon:"success",
+title:"บันทึกข้อมูลสำเร็จ"
+
+}).then(()=>{
+
+window.location="borrower-dashboard.html";
+
+});
+
+}
+
+function skipProfile(){
+
+window.location="borrower-dashboard.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
